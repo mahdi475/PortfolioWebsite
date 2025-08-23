@@ -1,8 +1,78 @@
-.topBar{
-    width: 100vw;
-    height: auto;
-    position:absolute;
-    top: 10px;
-    right: 0;
-    background-color: red;
+.topbar {
+  width: 100vw;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  padding: 1rem 3rem 1rem 2rem; /* Increased right padding */
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(30,60,114,0.1);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.topbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.topbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem; /* Reduced gap */
+  margin: 0;
+  padding: 0;
+}
+
+.topbar-links li {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.topbar-links li a:hover {
+  background: #ffd700;
+  color: #1e3c72;
+  box-shadow: 0 2px 8px rgba(30,60,114,0.15);
+}
+.topbar-logo-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.topbar-logo-btn:hover {
+  background: #ffd700;
+  color: #1e3c72;
+  box-shadow: 0 2px 8px rgba(30,60,114,0.15);
 }

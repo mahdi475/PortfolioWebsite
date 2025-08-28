@@ -7,24 +7,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #1e3c72, #2a5298);
-  padding: 1rem 3rem 1rem 2rem; /* Increased right padding */
+  background: linear-gradient(90deg, #23294a 0%, #181c2f 100%);
+  padding: 1rem 3rem 1rem 2rem;
   color: #fff;
   box-shadow: 0 2px 8px rgba(30,60,114,0.1);
   z-index: 100;
   box-sizing: border-box;
 }
 
-.topbar-logo {
+.topbar-logo-btn {
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.topbar-logo-btn:hover {
+  background: #ffd700;
+  color: #23294a;
+  box-shadow: 0 2px 8px rgba(30,60,114,0.15);
 }
 
 .topbar-links {
   list-style: none;
   display: flex;
-  gap: 1.2rem; /* Reduced gap */
+  gap: 1.2rem;
   margin: 0;
   padding: 0;
 }
@@ -52,27 +68,6 @@
 
 .topbar-links li a:hover {
   background: #ffd700;
-  color: #1e3c72;
-  box-shadow: 0 2px 8px rgba(30,60,114,0.15);
-}
-.topbar-logo-btn {
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem 1.2rem;
-  border-radius: 20px;
-  transition: background 0.2s, color 0.2s;
-  background: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  display: inline-block;
-}
-
-.topbar-logo-btn:hover {
-  background: #ffd700;
-  color: #1e3c72;
+  color: #23294a;
   box-shadow: 0 2px 8px rgba(30,60,114,0.15);
 }

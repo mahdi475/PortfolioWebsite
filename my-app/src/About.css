@@ -1,0 +1,6 @@
+.about-page {
+  padding: 2rem;
+  color: #fff;
+  background: #222; /* Add this line for a dark background */
+  min-height: 100vh; /* Make sure it fills the page */
+}

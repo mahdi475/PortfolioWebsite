@@ -1,0 +1,107 @@
+.skills-page {
+  padding: 2rem;
+  color: #eaeaea;
+  min-height: 100vh;
+  text-align: center;
+  background: linear-gradient(120deg, #181c2f 0%, #23294a 50%, #181c2f 100%);
+  animation: gradientMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.skills-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ffd700 10%, #eaeaea 40%, #646cff 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+  from { text-shadow: 0 0 8px #ffd70044; }
+  to { text-shadow: 0 0 24px #ffd70088; }
+}
+
+.skills-section {
+  background: #23294aee;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #0006;
+  margin: 2rem 0;
+  padding: 2rem;
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.skills-section h2 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.skills-list {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.skill-card {
+  background: #181c2f;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0004;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 90px;
+  margin-bottom: 1rem;
+}
+.skill-card:hover {
+  transform: scale(1.12) rotate(-8deg);
+  box-shadow: 0 4px 24px #ffd70088;
+  background: #23294a;
+}
+
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.soft-skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.soft-skills-list li {
+  background: #181c2f;
+  color: #ffd700;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px #0004;
+  transition: background 0.2s, color 0.2s;
+}
+.soft-skills-list li:hover {
+  background: #ffd700;

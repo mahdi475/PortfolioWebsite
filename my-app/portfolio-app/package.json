@@ -1,30 +1,36 @@
 {
-  "name": "portfolio-app",
+  "name": "mahdi-portfolio",
   "version": "1.0.0",
-  "description": "A portfolio website showcasing projects and skills.",
+  "description": "Mahdi Mosavi's personal portfolio website.",
   "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "portfolio",
     "react",
-    "website"
+    "website",
+    "mahdi",
+    "developer"
   ],
-  "author": "Your Name",
+  "author": "Mahdi Mosavi",
   "license": "MIT",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3"
   },
-  "devDependencies": {},
-  "homepage": "http://your-portfolio-url.com",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  },
+  "homepage": "https://mahdiportfolio.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/portfolio-app.git"
+    "url": "https://github.com/mahdi475/PortfolioWebsite.git"
   }
 }

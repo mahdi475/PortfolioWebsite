@@ -1,0 +1,29 @@
+.lux-footer {
+  width: 100%;
+  background: linear-gradient(90deg, #23294a 0%, #181c2f 100%);
+  color: #ffd700;
+  padding: 1.2rem 0;
+  box-shadow: 0 -2px 16px #0006;
+  text-align: center;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.footer-links a {
+  color: #ffd700;
+  margin: 0 0.7rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #646cff;
+}

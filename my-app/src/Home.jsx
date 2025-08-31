@@ -37,7 +37,7 @@ function Home() {
     <div className="home-page animated-bg">
       {/* Profilbild */}
       <img
-        src="https://randomuser.me/api/portraits/men/32.jpg"
+        src="/pic1.jpg"
         alt="Profilbild"
         className="profile-img fade-in"
       />

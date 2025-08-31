@@ -26,7 +26,11 @@ function Contact() {
           <a href="mailto:mahdi@example.com">mahdi@example.com</a>
         </div>
       </div>
-      <form className="contact-form fade-in" autoComplete="off">
+      <form
+        className="contact-form fade-in"
+        action="https://formspree.io/f/xyzdwnkl"
+        method="POST"
+      >
         <h2>Skicka ett meddelande</h2>
         <input type="text" name="name" placeholder="Ditt namn" required />
         <input type="email" name="email" placeholder="Din e-post" required />

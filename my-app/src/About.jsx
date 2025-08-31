@@ -29,7 +29,7 @@ function About() {
       {/* Profilbild med glow */}
       <div className="about-img-glow fade-in">
         <img
-          src="https://randomuser.me/api/portraits/men/32.jpg"
+          src="/pic1.jpg"
           alt="Profilbild"
           className="about-profile-img"
         />

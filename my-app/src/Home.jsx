@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Home.css'
 
 const logos = [
@@ -33,8 +34,26 @@ const projects = [
 ]
 
 function Home() {
+  const [pop, setPop] = useState(false);
+  const [showThanks, setShowThanks] = useState(false);
+
+  const handleCVClick = () => {
+    setPop(true);
+    setTimeout(() => {
+      setPop(false);
+      setShowThanks(true);
+      setTimeout(() => setShowThanks(false), 2500);
+    }, 900);
+  };
+
   return (
     <div className="home-page animated-bg">
+      {/* Flytande bakgrundsbollar */}
+      <div className="floating-balls">
+        <div className="ball ball1"></div>
+        <div className="ball ball2"></div>
+        <div className="ball ball3"></div>
+      </div>
       {/* Profilbild */}
       <img
         src="/pic1.jpg"
@@ -56,14 +75,36 @@ function Home() {
           </a>
         ))}
       </div>
-      {/* CV-knapp */}
-      <a href="/cv.pdf" className="cv-btn fade-in" download>
-        <span role="img" aria-label="cv">📄</span> Ladda ner mitt CV
-      </a>
-      {/* Logotyper */}
+      {/* CV-knapp med fet animation */}
+      <div className="cv-btn-wrapper">
+        <a
+          href="/cv.pdf"
+          className={`cv-btn fade-in${pop ? ' cv-explode' : ''}`}
+          download
+          onClick={handleCVClick}
+        >
+          <span role="img" aria-label="cv">📄</span> Ladda ner mitt CV
+        </a>
+        {pop && (
+          <div className="cv-confetti">
+            <div className="cv-confetti-piece cv-c1"></div>
+            <div className="cv-confetti-piece cv-c2"></div>
+            <div className="cv-confetti-piece cv-c3"></div>
+            <div className="cv-confetti-piece cv-c4"></div>
+            <div className="cv-confetti-piece cv-c5"></div>
+            <div className="cv-confetti-piece cv-c6"></div>
+          </div>
+        )}
+        {showThanks && (
+          <div className="cv-thanks fade-in">
+            Tack för att du laddade ner mitt CV!
+          </div>
+        )}
+      </div>
+      {/* Logotyper med roterande effekt */}
       <div className="tech-logos fade-in">
         {logos.map(logo => (
-          <img key={logo.name} src={logo.url} alt={logo.name} title={logo.name} className="tech-logo" />
+          <img key={logo.name} src={logo.url} alt={logo.name} title={logo.name} className="tech-logo active-spin" />
         ))}
       </div>
       {/* Om mig */}

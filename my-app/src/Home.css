@@ -172,3 +172,123 @@
     font-size: 1.5rem;
   }
 }
+/* Flytande bakgrundsbollar */
+.floating-balls {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+.ball {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  filter: blur(8px);
+  animation: floatBall 3s infinite alternate;
+}
+.ball1 { width: 120px; height: 120px; background: #ffd700; top: 10%; left: 5%; animation-delay: 0s;}
+.ball2 { width: 180px; height: 180px; background: #646cff; top: 60%; left: 80%; animation-delay: 2s;}
+.ball3 { width: 90px; height: 90px; background: #eaeaea; top: 80%; left: 20%; animation-delay: 4s;}
+
+@keyframes floatBall {
+  0% { transform: translateY(0) scale(1);}
+  100% { transform: translateY(-40px) scale(1.2);}
+}
+
+/* Roterande teknikloggor */
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+.tech-logo.active-spin:hover {
+  animation: spin 1.5s linear infinite;
+  filter: drop-shadow(0 0 16px #ffd70088);
+}
+
+/* Pulsande CV-knapp */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0px #ffd70088;}
+  50% { box-shadow: 0 0 24px #ffd700cc;}
+  100% { box-shadow: 0 0 0px #ffd70088;}
+}
+.cv-btn {
+  animation: pulse 2s infinite;
+  transition: box-shadow 0.2s;
+}
+
+/* Glödande sociala ikoner */
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 0px #646cff);}
+  50% { filter: drop-shadow(0 0 16px #646cff);}
+  100% { filter: drop-shadow(0 0 0px #646cff);}
+}
+.social-icon {
+  animation: glow 2.5s infinite;
+  transition: filter 0.2s;
+}
+
+.cv-btn-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cv-btn.cv-explode {
+  animation: cvFill 0.3s cubic-bezier(.68,-0.55,.27,1.55) forwards, cvPop 0.4s 0.3s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+  background: linear-gradient(90deg, #ffd700, #646cff);
+  color: #23294a;
+  box-shadow: 0 0 48px #ffd700cc, 0 0 24px #646cff88;
+  border: 2px solid #ffd700;
+}
+
+@keyframes cvFill {
+  0% { background: linear-gradient(90deg, #23294a, #181c2f); color: #eaeaea; }
+  100% { background: linear-gradient(90deg, #ffd700, #646cff); color: #23294a; }
+}
+@keyframes cvPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.25) rotate(-8deg);}
+  60% { transform: scale(0.95) rotate(8deg);}
+  80% { transform: scale(1.1);}
+  100% { transform: scale(1); }
+}
+
+.cv-confetti {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cv-confetti-piece {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: cvConfettiPop 0.7s 0.3s forwards;
+}
+.cv-c1 { background: #ffd700; left: 0px; top: 0px;}
+.cv-c2 { background: #646cff; left: 30px; top: 10px;}
+.cv-c3 { background: #eaeaea; left: 20px; top: 30px;}
+.cv-c4 { background: #ff6f61; left: 40px; top: 20px;}
+.cv-c5 { background: #00c896; left: 10px; top: 40px;}
+.cv-c6 { background: #ffd700; left: 25px; top: 25px;}
+
+@keyframes cvConfettiPop {
+  0% { opacity: 0; transform: scale(0);}
+  40% { opacity: 1; transform: scale(1.2);}
+  100% { opacity: 0; transform: translateY(-60px) scale(0.8) rotate(360deg);}
+}
+.cv-thanks {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #ffd700;
+  font-weight: 700;
+  background: #23294aee;
+  border-radius: 12px;
+  padding: 0.7rem 1.5rem;
+  box-shadow: 0 2px 16px #0006;
+  animation: fadeIn 3s;
+}

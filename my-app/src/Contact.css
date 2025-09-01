@@ -30,7 +30,8 @@
   margin-bottom: 1rem;
   letter-spacing: 2px;
   background: linear-gradient(90deg, #ffd700 10%, #eaeaea 40%, #646cff 90%);
-  -webkit-background-clip: text;
+  background-clip: text; /* Standard */
+  -webkit-background-clip: text; /* Safari/Chrome */
   -webkit-text-fill-color: transparent;
   animation: textGlow 2s infinite alternate;
 }

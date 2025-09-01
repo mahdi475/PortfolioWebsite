@@ -42,7 +42,7 @@ function About() {
       <div className="about-intro fade-in">
         <p>
           I am a <span className="about-highlight">passionate software developer</span> currently studying <span className="about-highlight">Computer Engineering</span> at <span className="about-highlight">Högskolan Väst</span>.<br />
-          I have been programming for <span className="about-highlight">over four years</span>, specializing in <span className="about-highlight">game development</span>, <span className="about-highlight">full-stack web development</span>, and all sorts of applications.
+          I have been programming for <span className="about-highlight">over four years</span>, specializing in <span className="about-highlight">game development</span>, <span className="about-highlight">full-stack web development</span>, and all sorts of other applications.
         </p>
         <p>
           My expertise includes <span className="about-highlight">C#, Python, JavaScript, C++,</span> and various other programming languages and frameworks.<br />

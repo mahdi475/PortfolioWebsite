@@ -72,58 +72,101 @@
   box-shadow: 0 2px 8px rgba(30,60,114,0.15);
 }
 
-/* ...existing code... */
+/* Hamburger hidden by default (desktop) */
+.hamburger {
+  display: none;
+}
 
+/* Mobile styles */
 @media (max-width: 700px) {
-  body {
-    font-size: 1rem;
-    padding: 0;
-    margin: 0;
-  }
-
   .topbar {
     flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem;
     height: auto;
-    padding: 1rem 0.5rem;
   }
 
-  .welcome-text,
-  .about-title,
-  .contact-title,
-  .projects-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.7rem;
-    letter-spacing: 1px;
+  .topbar-logo-btn {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
-  .profile-img,
-  .about-profile-img,
-  .project-detail-img {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    margin: 0 auto 1rem auto;
+  .hamburger {
     display: block;
+    font-size: 2rem;
+    background: #23294a;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    margin-left: auto;
   }
 
-  .tech-logos,
-  .projects-list,
-  .contact-cards {
+  .topbar-links {
+    display: none;
     flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+    width: 100%;
+    background: #23294a;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(30,60,114,0.15);
   }
 
-  .project-card,
-  .contact-card {
-    width: 90vw;
-    margin: 0 auto;
+  .topbar-links.open {
+    display: flex;
   }
 
-  .contact-form {
-    width: 95vw;
+  .topbar-links li {
+    width: 100%;
+  }
+
+  .topbar-links li a {
+    width: 100%;
+    text-align: left;
     padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 0;
+    border-bottom: 1px solid #333;
+  }
+
+  @media (max-width: 700px) {
+  .topbar {
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 101;
+    font-size: 2rem;
+    background: #23294a;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+  }
+
+  .topbar-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    background: #23294a;
+    display: none;
+    flex-direction: column;
+    z-index: 100;
+  }
+
+  .topbar-links.open {
+    display: flex;
   }
 }
 
-/* ...existing code... */
+}

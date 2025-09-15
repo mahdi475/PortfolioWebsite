@@ -27,7 +27,7 @@ Jag är passionerad utvecklare med erfarenhet av **CSS, C#, Python, HTML, Java, 
 
 ## 📂 Projekt
 
-Utforska mina projekt på [Projects-sidan](https://mahdiportfolio.com/projects).
+Utforska mina projekt på [Projects-sidan](https://www.mahdiportfolio.com/projects).
 
 ---
 

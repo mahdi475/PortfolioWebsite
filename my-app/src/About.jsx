@@ -14,13 +14,13 @@ const skills = [
 ]
 
 const highlights = [
-  "Game development in Unity & C#",
-  "AI-driven tools & experiments",
-  "Full-stack web development",
-  "Embedded systems & assembly programming",
-  "Optimized, high-quality code",
-  "Creative problem solving",
-  "Always learning new tech"
+  'Spelutveckling i Unity & C#',
+  'AI‑drivna verktyg och experiment',
+  'Full‑stack webbutveckling',
+  'Inbyggda system & assembler',
+  'Optimerad, högkvalitativ kod',
+  'Kreativ problemlösning',
+  'Lär mig alltid ny teknik'
 ]
 
 function About() {
@@ -34,54 +34,70 @@ function About() {
           className="about-profile-img"
         />
       </div>
-      {/* Animated headline */}
+
+      {/* Rubrik */}
       <h1 className="about-title fade-in">
         Om mig <span className="about-emoji">🚀</span>
       </h1>
-      {/* Animated intro text */}
+
+      {/* Intro */}
       <div className="about-intro fade-in">
         <p>
-          I am a <span className="about-highlight">passionate software developer</span> currently studying <span className="about-highlight">Computer Engineering</span> at <span className="about-highlight">Högskolan Väst</span>.<br />
-          I have been programming for <span className="about-highlight">over four years</span>, specializing in <span className="about-highlight">game development</span>, <span className="about-highlight">full-stack web development</span>, and all sorts of other applications.
+          Jag är en <span className="about-highlight">passionerad mjukvaruutvecklare</span> som studerar
+          <span className="about-highlight"> Datateknik</span> vid
+          <span className="about-highlight"> Högskolan Väst</span>.<br />
+          Jag har programmerat i <span className="about-highlight">över fyra år</span> med fokus på
+          <span className="about-highlight"> spelutveckling</span>,
+          <span className="about-highlight"> full‑stack webbutveckling</span> och olika typer av applikationer.
         </p>
         <p>
-          My expertise includes <span className="about-highlight">C#, Python, JavaScript, C++,</span> and various other programming languages and frameworks.<br />
-          I have worked on multiple projects, including <span className="about-highlight">game development in Unity</span>, <span className="about-highlight">AI-driven tools</span>, and <span className="about-highlight">full-stack applications</span>.<br />
-          Additionally, I have experience in <span className="about-highlight">embedded systems</span> and <span className="about-highlight">assembly programming</span>.
+          Min expertis inkluderar <span className="about-highlight">C#, Python, JavaScript, C++</span> samt flera andra
+          språk och ramverk.<br />
+          Jag har byggt projekt inom <span className="about-highlight">Unity‑spel</span>,
+          <span className="about-highlight"> AI‑drivna verktyg</span> och
+          <span className="about-highlight"> full‑stack‑applikationer</span>.<br />
+          Dessutom har jag erfarenhet av <span className="about-highlight">inbyggda system</span> och
+          <span className="about-highlight"> assemblerprogrammering</span>.
         </p>
         <p>
-          I am always eager to learn and explore new technologies while striving to create <span className="about-highlight">high-quality, optimized software solutions</span>.<br />
-          I also enjoy working on <span className="about-highlight">game projects</span>, experimenting with <span className="about-highlight">AI</span>, and pushing the limits of interactive experiences.
+          Jag är alltid nyfiken på nya tekniker och strävar efter att skapa
+          <span className="about-highlight"> högkvalitativa, optimerade mjukvarulösningar</span>.<br />
+          Jag gillar även att arbeta med <span className="about-highlight">spelprojekt</span>,
+          experimentera med <span className="about-highlight">AI</span> och tänja på gränserna för interaktiva upplevelser.
         </p>
       </div>
-      {/* Animated skill icons */}
+
+      {/* Skills */}
       <div className="about-skills fade-in">
-        {skills.map(skill => (
+        {skills.map((skill) => (
           <div key={skill.name} className="about-skill-card">
             <img src={skill.icon} alt={skill.name} title={skill.name} className="about-skill-icon" />
             <span>{skill.name}</span>
           </div>
         ))}
       </div>
-      {/* Highlights with animation */}
+
+      {/* Höjdpunkter */}
       <div className="about-highlights fade-in">
-        <h2>Highlights</h2>
+        <h2>Höjdpunkter</h2>
         <ul>
           {highlights.map((item, i) => (
             <li key={i} className="about-highlight-item">{item}</li>
           ))}
         </ul>
       </div>
-      {/* Animated divider */}
+
+      {/* Avdelare */}
       <div className="about-divider">
         <span className="about-divider-dot"></span>
         <span className="about-divider-dot"></span>
         <span className="about-divider-dot"></span>
       </div>
-      {/* Animated quote */}
+
+      {/* Citat */}
       <div className="about-quote fade-in">
         <blockquote>
-          "Code is like magic – the more you learn, the more powerful you become."
+          ”Kod är som magi – ju mer du lär dig, desto mer kraftfull blir du.”
         </blockquote>
       </div>
     </div>

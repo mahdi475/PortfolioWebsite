@@ -11,19 +11,19 @@ function Contact() {
       <div className="contact-cards fade-in">
         <div className="contact-card">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" className="contact-icon" />
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/mahdi-mousavi-802690229/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
         <div className="contact-card">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="contact-icon" />
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/mahdi475" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
         <div className="contact-card">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram" className="contact-icon" />
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.instagram.com/mahdi.mouusavi4/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
         <div className="contact-card">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email" className="contact-icon" />
-          <a href="mailto:mahdi@example.com">mahdi@example.com</a>
+          <a href="mailto:mahdimousavi8909@icloud.com">mahdimousavi8909@icloud.com</a>
         </div>
       </div>
       <form

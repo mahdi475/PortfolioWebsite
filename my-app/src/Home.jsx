@@ -12,10 +12,10 @@ const logos = [
 ]
 
 const socials = [
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg' },
+  { name: 'LinkedIn', url: "https://www.linkedin.com/in/mahdi-mousavi-802690229/", icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg' },
   { name: 'GitHub', url: 'https://github.com/mahdi475', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-  { name: 'Instagram', url: 'https://instagram.com/', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg' },
-  { name: 'Email', url: 'mailto:mahdi@example.com', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg' },
+  { name: 'Instagram', url: "https://www.instagram.com/mahdi.mouusavi4/" , icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg' },
+  { name: 'Email', url: "mailto:mahdimousavi8909@icloud.com", icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg' },
 ]
 
 const strengths = [

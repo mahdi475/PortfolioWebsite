@@ -1,9 +1,20 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { useLanguage } from './contexts/LanguageContext'
+import { translations } from './translations'
 import './topbar.css'
 
 function Topbar() {
   const [open, setOpen] = useState(false)
+  const location = useLocation()
+  const { language, toggleLanguage } = useLanguage()
+  const t = translations[language].nav
+
+  const isActive = (path) => {
+    return location.pathname === path || 
+           (path === '/' && location.pathname === '/') ||
+           (path !== '/' && location.pathname.startsWith(path))
+  }
 
   return (
     <nav className="topbar">
@@ -16,11 +27,16 @@ function Topbar() {
         &#9776;
       </button>
       <ul className={`topbar-links${open ? ' open' : ''}`}>
-        <li><Link to="/" onClick={() => setOpen(false)}>Home</Link></li>
-        <li><Link to="/about" onClick={() => setOpen(false)}>About</Link></li>
-        <li><Link to="/projects" onClick={() => setOpen(false)}>Projects</Link></li>
-        <li><Link to="/skills" onClick={() => setOpen(false)}>Skills</Link></li>
-        <li><Link to="/contact" onClick={() => setOpen(false)}>Contact</Link></li>
+        <li><Link to="/" className={isActive('/') ? 'active' : ''} onClick={() => setOpen(false)}>{t.home}</Link></li>
+        <li><Link to="/about" className={isActive('/about') ? 'active' : ''} onClick={() => setOpen(false)}>{t.about}</Link></li>
+        <li><Link to="/projects" className={isActive('/projects') ? 'active' : ''} onClick={() => setOpen(false)}>{t.projects}</Link></li>
+        <li><Link to="/skills" className={isActive('/skills') ? 'active' : ''} onClick={() => setOpen(false)}>{t.skills}</Link></li>
+        <li><Link to="/contact" className={isActive('/contact') ? 'active' : ''} onClick={() => setOpen(false)}>{t.contact}</Link></li>
+        <li>
+          <button className="language-toggle" onClick={toggleLanguage} aria-label="Toggle language">
+            {language === 'sv' ? '🇬🇧 EN' : '🇸🇪 SV'}
+          </button>
+        </li>
       </ul>
     </nav>
   )

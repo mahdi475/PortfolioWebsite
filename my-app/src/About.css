@@ -11,6 +11,8 @@
   z-index: 1;
   background: linear-gradient(120deg, #181c2f 0%, #23294a 50%, #181c2f 100%);
   animation: gradientMove 8s ease-in-out infinite alternate;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @keyframes gradientMove {

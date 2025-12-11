@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useLanguage } from './contexts/LanguageContext'
+import { translations } from './translations'
 import './Home.css'
 
 const logos = [
@@ -36,6 +38,8 @@ const projects = [
 function Home() {
   const [pop, setPop] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
+  const { language } = useLanguage()
+  const t = translations[language].home
 
   const handleCVClick = () => {
     setPop(true);
@@ -57,21 +61,20 @@ function Home() {
       {/* Profilbild */}
       <img
         src="/pic1.jpg"
-        alt="Profilbild"
+        alt={language === 'sv' ? 'Profilbild av Mahdi Mosavi - Mjukvaruutvecklare' : 'Profile picture of Mahdi Mosavi - Software Developer'}
         className="profile-img fade-in"
+        loading="lazy"
       />
       {/* Animated Welcome */}
-      <h1 className="welcome-text fade-in">Välkommen till min portfoliosida!</h1>
+      <h1 className="welcome-text fade-in">{t.welcome}</h1>
       <p className="fade-in">
-        <span className="highlight">Mahdi Mosavi</span> | Högskolan Väst<br />
-        Passionerad utvecklare med erfarenhet av <span className="highlight">CSS, C#, Python, HTML, Java, Vite, C++</span>.<br />
-        Utforska mina projekt och färdigheter!
+        {t.intro}
       </p>
       {/* Sociala medier */}
       <div className="socials fade-in">
         {socials.map(social => (
-          <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer">
-            <img src={social.icon} alt={social.name} title={social.name} className="social-icon" />
+          <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" title={`${language === 'sv' ? 'Besök min' : 'Visit my'} ${social.name}`}>
+            <img src={social.icon} alt={`${social.name} ${language === 'sv' ? 'ikon' : 'icon'}`} title={social.name} className="social-icon" loading="lazy" />
           </a>
         ))}
       </div>
@@ -83,7 +86,7 @@ function Home() {
           download
           onClick={handleCVClick}
         >
-          <span role="img" aria-label="cv">📄</span> Ladda ner mitt CV
+          <span role="img" aria-label="cv">📄</span> {t.downloadCV}
         </a>
         {pop && (
           <div className="cv-confetti">
@@ -97,14 +100,21 @@ function Home() {
         )}
         {showThanks && (
           <div className="cv-thanks fade-in">
-            Tack för att du laddade ner mitt CV!
+            {t.thanks}
           </div>
         )}
       </div>
       {/* Logotyper med roterande effekt */}
       <div className="tech-logos fade-in">
         {logos.map(logo => (
-          <img key={logo.name} src={logo.url} alt={logo.name} title={logo.name} className="tech-logo active-spin" />
+          <img 
+            key={logo.name} 
+            src={logo.url} 
+            alt={`${logo.name} logo - teknologi`} 
+            title={logo.name} 
+            className="tech-logo active-spin"
+            loading="lazy"
+          />
         ))}
       </div>
       {/* Om mig */}

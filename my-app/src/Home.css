@@ -9,6 +9,8 @@
   justify-content: flex-start;
   position: relative;
   z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .animated-bg {
@@ -175,7 +177,7 @@
 /* Flytande bakgrundsbollar */
 .floating-balls {
   position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
+  top: 0; left: 0; width: 100%; height: 100vh;
   pointer-events: none;
   z-index: 0;
 }

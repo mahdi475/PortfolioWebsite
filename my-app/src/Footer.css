@@ -2,28 +2,111 @@
   width: 100%;
   background: linear-gradient(90deg, #23294a 0%, #181c2f 100%);
   color: #ffd700;
-  padding: 1.2rem 0;
-  box-shadow: 0 -2px 16px #0006;
-  text-align: center;
-  font-size: 1.1rem;
+  padding: 2.5rem 1rem 1.5rem;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 10;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.7rem;
+  gap: 2rem;
 }
 
-.footer-links a {
-  color: #ffd700;
-  margin: 0 0.7rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s;
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
 }
-.footer-links a:hover {
-  color: #646cff;
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-section h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffd700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.footer-section a:hover {
+  color: #ffd700;
+  transform: translateX(4px);
+}
+
+.footer-section a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.footer-section a:hover::before {
+  width: 100%;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .lux-footer {
+    padding: 1.5rem 1rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-section h4 {
+    font-size: 0.9rem;
+  }
+
+  .footer-section a {
+    font-size: 0.9rem;
+  }
 }

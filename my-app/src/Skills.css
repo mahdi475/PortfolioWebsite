@@ -3,7 +3,7 @@
   box-sizing: border-box;
   min-height: 100vh;
   padding: var(--spacing-2xl);
-  background: linear-gradient(135deg, #181c2f 0%, #23294a 50%, #181c2f 100%);
+  background: #f5f5f5;
   overflow-x: hidden;
 }
 

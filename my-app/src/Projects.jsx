@@ -1,89 +1,18 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useLanguage } from './contexts/LanguageContext'
 import { translations } from './translations'
 import { projectsData } from './projectsData'
 import './Projects.css'
 
-const projects = [
-  {
-    id: "project1",
-    name: "Portfolio Website",
-    desc: "En modern portfolio byggd med React, Vite och avancerad CSS.",
-    tech: ["React", "Vite", "CSS", "JavaScript"],
-    details: "Detta projekt visar min personliga portfolio med animationer, responsiv design och integration av sociala medier. All kod är optimerad för prestanda och tillgänglighet.",
-    img: "/pic1.jpg",
-    features: ["Responsiv design", "Smooth animationer", "Glassmorphism UI", "Contact form integration"],
-    status: "Avslutad",
-    year: "2025"
-  },
-  {
-    id: "project2",
-    name: "Weather App",
-    desc: "En väderapplikation med API-integration och snygga effekter.",
-    tech: ["JavaScript", "CSS", "API", "HTML"],
-    details: "Appen hämtar väderdata från ett externt API och visar det med interaktiva grafer och animationer. Designen är mörk och lyxig, med smooth transitions.",
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-    features: ["Real-time väderdata", "Interaktiva grafer", "Geolocation", "5-dagars prognos"],
-    status: "Avslutad",
-    year: "2024"
-  },
-  {
-    id: "project2b",
-    name: "Oompaloompa (MVP Website)",
-    desc: "En fullstack choklad-marketplace med rollbaserad access för köpare, säljare och admins.",
-    tech: ["React", "TypeScript", "Supabase", "Redux Toolkit", "PostgreSQL"],
-    details: "Ett ambitiöst grupprojekt där vi bygger en komplett e-handelsplattform för chokladprodukter från hela världen - tänk Facebook Marketplace fast för choklad. Istället för att gå till ett specifikt chokladföretag samlar vi alla säljare på en plats.\n\nPlattformen har tre separata flöden: Buyers kan browsa produkter och checka ut, Sellers kan registrera sig (med verifiering via ID-upload), skapa produkter och hantera orders, medan Admins godkänner säljare och övervakar hela plattformen. Vi använder Supabase för backend (auth, databas, storage) vilket gör det sjukt smidigt att jobba med real-time data.\n\nGrupparbetet har varit lärorikt - vi har delat upp arbetet mellan frontend, backend-logik och databas-design. Projektet är fortfarande ongoing och vi lägger till nya features kontinuerligt. Koden är skriven i TypeScript för bättre type-safety, och vi använder Redux Toolkit för state management vilket håller allt organiserat.",
-    img: "/oompaloompa4.png",
-    gallery: ["/oompaloompa1.png", "/oompaloompa2.png", "/oompaloompa3.png"],
-    features: [
-      "Rollbaserad autentisering (Buyer/Seller/Admin)",
-      "Seller-verifiering med dokumentuppladdning",
-      "Real-time produktkatalog med Supabase",
-      "Kundvagn och checkout-flow",
-      "Admin-dashboard för seller-godkännande",
-      "PostgreSQL databas med RLS (Row Level Security)",
-      "TypeScript för type-safety",
-      "Redux Toolkit för global state management",
-      "Internationalisering (i18next) - flerspråkigt stöd"
-    ],
-    status: "Pågående",
-    year: "2025 - Present",
-    github: "https://github.com/mahdi475/ChocolataMVP"
-  },
-  {
-    id: "project3",
-    name: "Parkour Runner 3D",
-    desc: "Ett utmanande 3D-plattformsspel med avancerad player-mekanik och dynamiska banor.",
-    tech: ["Unity", "Physics", "Game Design", "C#(44%)", "Shaderlab (33.5%)", "HlSL(22.5%)"],
-    details: "Ett påkostigt 3D-plattformsspel där spelaren styr en karaktär som måste navigera genom komplexa banor fullt med hinder, spöken och fällor. Spelet kräver precision, timing och problemlösning. Utvecklat i grupp under en hel termin med fokus på samarbete, testning och professionell kodkvalitet.\n\nSpelmekanik inkluderar avancerad player-kontroll med acceleration/deacceleration, hold-jump för variabel hopphöjd, dash-mekanik för snabb förflyttning, och intelligent jump-buffering för responsiv feel. Spelet har ingen traditionell AI-fiender utan fokuserar på level-design som instruktör - hindren som traps, eldväggar och platformer guider spelaren genom utmaningen.",
-    img: "/Skärmbild 2025-12-11 144413.png",
-    features: [
-      "Avancerad player-kontroll (acceleration, deacceleration, hold-jump)",
-      "Dash-mekanik med cooldown-system",
-      "Intelligent jump-buffering och coyote-time",
-      "Dynamiska banor med traps, eldväggar och hinder",
-      "Sound Manager med walking/dash-audio",
-      "Pausmeny och start-meny",
-      "Partikeleffekter för movement-feedback",
-      "Professionell gruppsamarbete och kodstandard"
-    ],
-    status: "Avslutad",
-    year: "2024",
-    github: "https://github.com/mahdi475/3DUnityGame",
-    scripts: ["PlayerController", "SoundManager", "PauseMenu", "StartMenu"]
-  },
-  {
-    id: "project4",
-    name: "AI Chatbot",
-    desc: "En smart chatbot byggd med Python och maskininlärning.",
-    tech: ["Python", "ML", "API", "React"],
-    details: "Chatboten använder NLP och maskininlärning för att förstå och svara på frågor. UI:t är modernt med mörkt tema och animationer för varje interaktion.",
-    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-    features: ["NLP-integration", "Machine Learning", "Natural responses", "Learning capability"],
-    status: "Avslutad",
-    year: "2023"
-  }
+const socials = [
+  { name: 'LinkedIn', url: "https://www.linkedin.com/in/mahdi-mousavi-802690229/", icon: 'fab fa-linkedin' },
+  { name: 'GitHub', url: 'https://github.com/mahdi475', icon: 'fab fa-github' },
+  { name: 'Instagram', url: "https://www.instagram.com/mahdi.mouusavi4/", icon: 'fab fa-instagram' },
 ]
+
+// Projects data is now imported from projectsData.js
+
 
 // Project details component
 function ProjectDetail({ project }) {
@@ -184,6 +113,12 @@ function ProjectDetail({ project }) {
 function Projects() {
   const { language } = useLanguage()
   const t = translations[language].projects
+  const projects = projectsData[language]
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' })
+  }, [location.pathname])
   
   return (
     <div className="projects-page animated-bg">
@@ -192,6 +127,7 @@ function Projects() {
           path="/"
           element={
             <div>
+              <div className="projects-spacer" aria-hidden="true"></div>
               <h1 className="projects-title fade-in">{t.title}</h1>
               <p className="projects-subtitle fade-in">{t.subtitle}</p>
               <div className="projects-list fade-in">
@@ -210,6 +146,7 @@ function Projects() {
                     </div>
                     <div className="project-card-content">
                       <h2>{project.name}</h2>
+                      <p className="project-role">{project.status} · {project.year}</p>
                       <p>{project.desc}</p>
                       <div className="project-tech">
                         {project.tech.slice(0, 3).map(t => (

@@ -1,6 +1,6 @@
 
 import React, { useContext, useMemo, useState } from 'react';
-import { LanguageContext } from '../App';
+import { LanguageContext, ThemeContext } from '../App';
 import { Project } from '../types';
 
 const projects: Project[] = [
@@ -74,6 +74,7 @@ const projects: Project[] = [
 
 const ProjectsGrid: React.FC = () => {
   const { lang, t } = useContext(LanguageContext);
+  const { theme } = useContext(ThemeContext);
   const [selected, setSelected] = useState<Project | null>(null);
 
   const mapped = useMemo(
@@ -185,7 +186,13 @@ const ProjectsGrid: React.FC = () => {
                   </span>
                 )}
                 {selected.year && (
-                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+                  <span 
+                    className="text-xs font-semibold px-3 py-1 rounded-full"
+                    style={{ 
+                      backgroundColor: theme === 'dark' ? '#1e293b' : '#dbeafe', 
+                      color: theme === 'dark' ? '#e2e8f0' : '#1d4ed8' 
+                    }}
+                  >
                     {t.projects.year_label}: {selected.year}
                   </span>
                 )}

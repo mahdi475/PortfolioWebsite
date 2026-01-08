@@ -1,0 +1,49 @@
+/* Light/dark theming surfaces */
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #f8f4ec 0%, #eef3ff 50%, #fdfdfd 100%);
+  color: #000000;
+}
+
+html.dark body {
+  color-scheme: dark;
+  background: radial-gradient(circle at 20% 20%, #0b1a3a 0%, #050b1f 40%, #020617 100%);
+  color: #e2e8f0;
+}
+
+.theme-shell {
+  background: linear-gradient(135deg, #f8f4ec 0%, #eef3ff 50%, #fdfdfd 100%);
+}
+
+html.dark .theme-shell {
+  background: radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.08) 0%, transparent 30%),
+              radial-gradient(circle at 80% 20%, rgba(129, 140, 248, 0.1) 0%, transparent 35%),
+              #020617;
+}
+
+.card-tint {
+  background: linear-gradient(145deg, #f4ecdf 0%, #eef2ff 55%, #ffffff 100%);
+}
+
+html.dark .card-tint {
+  background: #0f172a;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+html.dark .glass-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+a {
+  text-decoration: none;
+}

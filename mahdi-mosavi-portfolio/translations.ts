@@ -1,0 +1,101 @@
+
+import { TranslationSet } from './types';
+
+export const translations: Record<'en' | 'sv', TranslationSet> = {
+  en: {
+    header: {
+      home: 'Home',
+      projects: 'Projects',
+      contact: 'Contact',
+    },
+    hero: {
+      title: 'SOFTWARE DEVELOPER',
+      greeting: "I am Mahdi Mosavi",
+      subtitle: 'Who I am and what I do',
+      tagline: 'Game development · AI · Web',
+      cta_cv: 'CV',
+      cta_projects: 'PROJECTS',
+      cta_contact: 'CONTACT',
+    },
+    about: {
+      title: 'About Me',
+      text: "Hi! I'm Mahdi, a passionate programmer with 4+ years of experience. I'm studying Computer Engineering at University West and love creating innovative solutions in game development, AI, and web development.",
+    },
+    projects: {
+      title: 'My Projects',
+      view_more: 'View Details',
+      view_code: 'View on GitHub',
+      view_live: 'Open Demo',
+      status_active: 'Ongoing',
+      status_completed: 'Completed',
+      year_label: 'Year',
+      features_label: 'Key Features',
+      tech_label: 'Tech Stack',
+      close: 'Close',
+    },
+    contact: {
+      title: 'Get In Touch',
+      call: 'Call',
+      write: 'Write',
+      follow: 'Follow',
+      name: 'Name',
+      email: 'Email',
+      message: 'Message',
+      send: 'Send Message',
+      sending: 'Sending...',
+      success: 'Thanks for reaching out! I will reply soon.',
+      error: 'Something went wrong. Please try again or email me directly.',
+    },
+    footer: {
+      rights: 'All rights reserved.',
+    },
+  },
+  sv: {
+    header: {
+      home: 'Hem',
+      projects: 'Projekt',
+      contact: 'Kontakt',
+    },
+    hero: {
+      title: 'MJUKVARUUTVECKLARE',
+      greeting: "Jag är Mahdi Mosavi",
+      subtitle: 'Vem är jag och vad jag gör',
+      tagline: 'Spelutveckling · AI · Webb',
+      cta_cv: 'CV',
+      cta_projects: 'PROJEKT',
+      cta_contact: 'KONTAKT',
+    },
+    about: {
+      title: 'Om mig',
+      text: "Hej! Jag är Mahdi, en passionerad programmerare med 4+ års erfarenhet. Jag studerar datateknik på Högskolan Väst och brinner för att skapa innovativa lösningar inom spelutveckling, AI och webbutveckling.",
+    },
+    projects: {
+      title: 'Mina Projekt',
+      view_more: 'Visa Detaljer',
+      view_code: 'Se på GitHub',
+      view_live: 'Öppna demo',
+      status_active: 'Pågående',
+      status_completed: 'Avslutad',
+      year_label: 'År',
+      features_label: 'Huvudfunktioner',
+      tech_label: 'Teknikstack',
+      close: 'Stäng',
+    },
+    contact: {
+      title: 'Kontakta Mig',
+      call: 'Ring',
+      write: 'Skriv',
+      follow: 'Följ',
+      name: 'Namn',
+      email: 'E-post',
+      message: 'Meddelande',
+      send: 'Skicka Meddelande',
+      sending: 'Skickar...',
+      success: 'Tack för ditt meddelande! Jag hör av mig snart.',
+      error: 'Något gick fel. Försök igen eller mejla mig direkt.',
+    },
+    footer: {
+      rights: 'Alla rättigheter förbehållna.',
+    },
+  },
+};

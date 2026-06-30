@@ -105,8 +105,8 @@ export const translations: Record<'en' | 'sv', TranslationSet> = {
       message: 'Message',
       send: 'Send Message',
       sending: 'Sending...',
-      success: 'Thanks for reaching out! I will reply soon.',
-      error: 'Something went wrong. Please try again or email me directly.',
+      success: 'Your email app should open with the message ready to send.',
+      error: 'Something went wrong. Please email me directly.',
     },
     footer: {
       rights: 'All rights reserved.',
@@ -191,8 +191,8 @@ export const translations: Record<'en' | 'sv', TranslationSet> = {
       message: 'Meddelande',
       send: 'Skicka meddelande',
       sending: 'Skickar...',
-      success: 'Tack för ditt meddelande! Jag hör av mig snart.',
-      error: 'Något gick fel. Försök igen eller mejla mig direkt.',
+      success: 'Din mailapp ska öppnas med meddelandet färdigt att skicka.',
+      error: 'Något gick fel. Mejla mig direkt istället.',
     },
     footer: {
       rights: 'Alla rättigheter förbehållna.',

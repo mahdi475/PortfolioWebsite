@@ -7,6 +7,8 @@ const socials = [
   { name: 'GitHub', url: 'https://github.com/mahdi475' },
 ];
 
+const contactEmail = 'mahdi.mosavi.work@gmail.com';
+
 const Contact: React.FC = () => {
   const { t } = useContext(LanguageContext);
   const [message, setMessage] = useState<string>('');
@@ -19,29 +21,20 @@ const Contact: React.FC = () => {
     setMessage('');
 
     const formData = new FormData(e.currentTarget);
+    const name = String(formData.get('name') || '').trim();
+    const email = String(formData.get('email') || '').trim();
+    const formMessage = String(formData.get('message') || '').trim();
 
-    try {
-      const res = await fetch('https://formspree.io/f/xyzdwnkl', {
-        method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' },
-      });
+    const subject = encodeURIComponent(`Portfolio contact from ${name || 'website visitor'}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${formMessage}`
+    );
 
-      if (res.ok) {
-        setIsError(false);
-        setMessage(t.contact.success || '');
-        e.currentTarget.reset();
-      } else {
-        setIsError(true);
-        setMessage(t.contact.error || '');
-      }
-    } catch (err) {
-      setIsError(true);
-      setMessage(t.contact.error || '');
-    } finally {
-      setIsSending(false);
-      setTimeout(() => setMessage(''), 5000);
-    }
+    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    setIsError(false);
+    setMessage(t.contact.success || '');
+    setIsSending(false);
+    setTimeout(() => setMessage(''), 5000);
   };
 
   return (
@@ -58,7 +51,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-bold text-slate-950 dark:text-white uppercase tracking-wider text-sm mb-1 transition-colors duration-500">{t.contact.write}</h3>
-                <p className="break-all text-blue-700 dark:text-blue-300 font-medium transition-colors duration-500">mahdi.mosavi.work@gmail.com</p>
+                <p className="break-all text-blue-700 dark:text-blue-300 font-medium transition-colors duration-500">{contactEmail}</p>
               </div>
               <div>
                 <h3 className="font-bold text-slate-950 dark:text-white uppercase tracking-wider text-sm mb-1 transition-colors duration-500">{t.contact.follow}</h3>

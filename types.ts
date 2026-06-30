@@ -8,9 +8,13 @@ export interface Project {
   description: Record<Language, string>;
   longDescription: Record<Language, string>;
   tech: string[];
-  image: string;
+  image?: string;
   link?: string;
   github?: string;
+  links?: Array<{
+    label: string;
+    url: string;
+  }>;
   demo?: string;
   status?: 'active' | 'completed';
   year?: string;
@@ -21,17 +25,28 @@ export interface Project {
 export interface TranslationSet {
   header: {
     home: string;
+    madrid: string;
     projects: string;
+    experience: string;
     contact: string;
   };
   hero: {
-    title: string;
-    greeting: string;
-    subtitle: string;
+    eyebrow: string;
+    name: string;
+    intro: string;
+    internship: string;
     cta_cv: string;
     cta_projects: string;
     cta_contact?: string;
-    tagline?: string;
+    cta_linkedin: string;
+    cta_github: string;
+  };
+  madrid: {
+    title: string;
+    items: Array<{
+      label: string;
+      value: string;
+    }>;
   };
   about: {
     title: string;
@@ -48,6 +63,19 @@ export interface TranslationSet {
     features_label: string;
     tech_label: string;
     close: string;
+  };
+  forMadrid: {
+    title: string;
+    text: string;
+  };
+  experience: {
+    title: string;
+    eyebrow: string;
+  };
+  linkedinPost: {
+    title: string;
+    intro: string;
+    body: string;
   };
   contact: {
     title: string;

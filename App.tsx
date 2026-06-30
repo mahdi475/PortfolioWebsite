@@ -3,7 +3,11 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import MadridInternship from './components/MadridInternship';
 import ProjectsGrid from './components/ProjectsGrid';
+import Experience from './components/Experience';
+import ForMadridCompanies from './components/ForMadridCompanies';
+import LinkedInPost from './components/LinkedInPost';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { Language, Theme } from './types';
@@ -21,8 +25,15 @@ export const ThemeContext = React.createContext<{
 }>({ theme: 'light', toggleTheme: () => {} });
 
 const App: React.FC = () => {
-  const [lang, setLang] = useState<Language>('sv');
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [lang, setLang] = useState<Language>('en');
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return 'light';
+
+    const savedTheme = window.localStorage.getItem('theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
 
   const t = useMemo(() => translations[lang], [lang]);
 
@@ -31,12 +42,13 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    window.localStorage.setItem('theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -45,8 +57,12 @@ const App: React.FC = () => {
           <Header />
           <main>
             <Hero />
+            <MadridInternship />
             <ProjectsGrid />
+            <Experience />
             <About />
+            <ForMadridCompanies />
+            <LinkedInPost />
             <Contact />
           </main>
           <Footer />

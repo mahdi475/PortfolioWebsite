@@ -30,7 +30,16 @@ const projects: Project[] = [
     gallery: ['/oompaloompa1.png', '/oompaloompa2.png', '/oompaloompa3.png'],
     status: 'active',
     year: '2024-2026',
-    github: 'https://github.com/mahdi475/ChocolataMVP',
+    links: [
+      {
+        label: 'Live catalog',
+        url: 'https://chocolata-mvp-ksrb.vercel.app/catalog',
+      },
+      {
+        label: 'GitHub',
+        url: 'https://github.com/mahdi475/ChocolataMVP',
+      },
+    ],
   },
   {
     id: 'telegram-job-mail-bot',
@@ -120,7 +129,16 @@ const projects: Project[] = [
     ],
     status: 'completed',
     year: '2026',
-    github: 'https://github.com/mahdi475/ugandastarsonrise',
+    links: [
+      {
+        label: 'Live website',
+        url: 'https://ugandafootballacademy.lovable.app/',
+      },
+      {
+        label: 'GitHub',
+        url: 'https://github.com/mahdi475/ugandastarsonrise',
+      },
+    ],
   },
 ];
 

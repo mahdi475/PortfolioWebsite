@@ -80,8 +80,8 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <aside className="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-xl shadow-slate-200/60 backdrop-blur dark:border-slate-800 dark:bg-slate-950/70 dark:shadow-black/20 md:p-6">
-          <div className="overflow-hidden rounded-xl">
+        <aside className="shader-card rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-xl shadow-slate-200/60 backdrop-blur dark:border-slate-800 dark:bg-slate-950/70 dark:shadow-black/20 md:p-6">
+          <div className="shader-sheen overflow-hidden rounded-xl">
             <img src="/profile-photo.png" alt="Mahdi Mosavi" className="aspect-[4/5] w-full object-cover object-center" />
           </div>
           <div className="mt-5 grid gap-3 text-sm">

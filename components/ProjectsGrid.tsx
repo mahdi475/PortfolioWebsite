@@ -216,7 +216,7 @@ const ProjectsGrid: React.FC = () => {
             return (
               <article
                 key={p.id}
-                className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-950"
+                className="shader-card group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-950"
                 onClick={() => setSelected(p)}
               >
                 <div className="overflow-hidden">

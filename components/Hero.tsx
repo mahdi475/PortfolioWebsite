@@ -21,8 +21,8 @@ const Hero: React.FC = () => {
     },
     {
       label: t.hero.cta_cv,
-      href: '/resume.pdf',
-      download: true,
+      href: '/resume.pdf#view=Fit',
+      external: true,
       className:
         'border border-slate-300 bg-white text-slate-950 hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-blue-500 dark:hover:bg-slate-800',
     },

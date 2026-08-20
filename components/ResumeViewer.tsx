@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const RESUME_PDF_URL = '/resume.pdf';
-const RESUME_DOWNLOAD_NAME = 'MahdiMousaviCV.pdf';
+const RESUME_DOWNLOAD_NAME = 'MahdiMosaviResume.pdf';
 
 const ResumeViewer: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

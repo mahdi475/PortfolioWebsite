@@ -4,5 +4,13 @@
   "framework": "vite",
   "rewrites": [
     { "source": "/resume", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/resume.pdf",
+      "headers": [
+        { "key": "Content-Disposition", "value": "inline; filename=\"MahdiMosaviResume.pdf\"" }
+      ]
+    }
   ]
 }

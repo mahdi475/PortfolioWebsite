@@ -12,12 +12,12 @@ const Hero: React.FC = () => {
 
     const downloadLink = document.createElement('a');
     downloadLink.href = '/resume.pdf';
-    downloadLink.download = 'Mahdi-Mosavi-CV.pdf';
+    downloadLink.download = 'MahdiMousaviCV.pdf';
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
 
-    window.open('/resume.pdf#view=Fit', '_blank', 'noopener,noreferrer');
+    window.open('/resume', '_blank', 'noopener,noreferrer');
   };
 
   const heroStats = [
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
     },
     {
       label: t.hero.cta_cv,
-      href: '/resume.pdf#view=Fit',
+      href: '/resume',
       external: true,
       onClick: handleCvClick,
       className:

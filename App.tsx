@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import ResumeViewer from './components/ResumeViewer';
 import About from './components/About';
 import MadridInternship from './components/MadridInternship';
 import ProjectsGrid from './components/ProjectsGrid';
@@ -49,6 +50,10 @@ const App: React.FC = () => {
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+
+  if (typeof window !== 'undefined' && window.location.pathname === '/resume') {
+    return <ResumeViewer />;
+  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

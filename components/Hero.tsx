@@ -7,6 +7,19 @@ const buttonBase =
 const Hero: React.FC = () => {
   const { t } = useContext(LanguageContext);
 
+  const handleCvClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    const downloadLink = document.createElement('a');
+    downloadLink.href = '/resume.pdf';
+    downloadLink.download = 'Mahdi-Mosavi-CV.pdf';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+
+    window.open('/resume.pdf#view=Fit', '_blank', 'noopener,noreferrer');
+  };
+
   const heroStats = [
     { value: '4+', label: 'real builds' },
     { value: 'Madrid', label: 'Autumn 2026' },
@@ -23,6 +36,7 @@ const Hero: React.FC = () => {
       label: t.hero.cta_cv,
       href: '/resume.pdf#view=Fit',
       external: true,
+      onClick: handleCvClick,
       className:
         'border border-slate-300 bg-white text-slate-950 hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-blue-500 dark:hover:bg-slate-800',
     },
@@ -75,7 +89,7 @@ const Hero: React.FC = () => {
               <a
                 key={action.label}
                 href={action.href}
-                download={action.download}
+                onClick={action.onClick}
                 target={action.external ? '_blank' : undefined}
                 rel={action.external ? 'noreferrer' : undefined}
                 className={`${buttonBase} ${action.className}`}

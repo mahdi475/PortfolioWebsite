@@ -1,20 +1,51 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Mahdi Mosavi — Portfolio Website
 
-# Run and deploy your AI Studio app
+Personal portfolio site for Mahdi Mosavi, a Computer Engineering student looking for Software, Web, and AI internship opportunities in Madrid.
 
-This contains everything you need to run your app locally.
+🔗 **Live site:** [mahdiportfolio.com](https://mahdiportfolio.com)
+📄 **CV:** [mahdiportfolio.com/cv](https://mahdiportfolio.com/cv)
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+## Tech Stack
 
-## Run Locally
+- **[Vite](https://vitejs.dev/)** — build tool and dev server
+- **React** + **TypeScript**
+- **Vercel** — hosting and deployment
+- Multi-language support (see `translations.ts`)
 
-**Prerequisites:**  Node.js
+## Getting Started
 
+**Prerequisites:** Node.js
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+# Install dependencies
+npm install
+
+# Run the dev server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+The production build outputs to `dist/`, which Vercel serves automatically on every push to `main`.
+
+## Project Structure
+
+```
+├── components/       # UI components
+├── public/           # Static assets (images, cv.pdf, etc.)
+├── App.tsx           # Root component
+├── index.tsx         # Entry point
+├── translations.ts   # i18n strings
+├── types.ts          # Shared TypeScript types
+└── vercel.json        # Vercel build & redirect config
+```
+
+## Deployment
+
+Pushes to `main` are automatically built and deployed by Vercel. The `/cv` route redirects to `public/cv.pdf` (configured in `vercel.json`) so the CV can always be shared as a clean link: `mahdiportfolio.com/cv`.
+
+## Contact
+
+- LinkedIn: [linkedin.com/in/mahdi-mosavi](https://linkedin.com/in/mahdi-mosavi-802690229)
+- GitHub: [github.com/mahdi475](https://github.com/mahdi475)

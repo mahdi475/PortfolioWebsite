@@ -22,8 +22,8 @@ const Hero: React.FC = () => {
 
   const heroStats = [
     { value: '4+', label: 'real builds' },
-    { value: 'Madrid', label: 'Autumn 2026' },
-    { value: 'AI/Web', label: 'internship focus' },
+    { value: 'UC3M', label: 'current exchange' },
+    { value: 'Open', label: 'to work anywhere' },
   ];
 
   const actions = [
@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
 
           <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-slate-700 dark:text-slate-300 md:text-xl">
             <p>{t.hero.intro}</p>
-            <p className="font-semibold text-slate-900 dark:text-slate-100">{t.hero.internship}</p>
+            <p className="font-semibold text-slate-900 dark:text-slate-100">{t.hero.opportunity}</p>
           </div>
 
           <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap md:gap-2">
@@ -117,17 +117,17 @@ const Hero: React.FC = () => {
           <div className="mt-4 grid gap-3 text-sm md:grid-cols-2">
             <div className="rounded-xl bg-slate-100 p-4 dark:bg-slate-900">
               <p className="font-display font-extrabold text-slate-950 dark:text-white">Computer Engineering</p>
-              <p className="mt-1 text-slate-600 dark:text-slate-300">University West - UC3M Leganes</p>
+              <p className="mt-1 text-slate-600 dark:text-slate-300">University West · exchange student at UC3M</p>
             </div>
             <div className="rounded-xl bg-blue-50 p-4 dark:bg-blue-950/40">
-              <p className="font-display font-extrabold text-blue-800 dark:text-blue-200">Internship focus</p>
-              <p className="mt-1 text-slate-700 dark:text-slate-300">Software, Web, AI, Full-stack</p>
+              <p className="font-display font-extrabold text-blue-800 dark:text-blue-200">Broad interests</p>
+              <p className="mt-1 text-slate-700 dark:text-slate-300">Software, web, AI, systems & more</p>
             </div>
           </div>
 
           <div className="mt-3 hidden rounded-2xl border border-slate-200 bg-slate-950 p-4 text-left shadow-inner dark:border-slate-800 sm:block">
             <p className="font-mono-tech text-xs text-blue-300">mahdi.system.check()</p>
-            <p className="font-mono-tech mt-2 text-sm text-slate-100">status: available_for_madrid_internship</p>
+            <p className="font-mono-tech mt-2 text-sm text-slate-100">status: open_to_computer_engineering_opportunities</p>
           </div>
         </aside>
       </div>

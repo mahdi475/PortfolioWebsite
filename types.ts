@@ -25,7 +25,6 @@ export interface Project {
 export interface TranslationSet {
   header: {
     home: string;
-    madrid: string;
     projects: string;
     experience: string;
     contact: string;
@@ -34,19 +33,12 @@ export interface TranslationSet {
     eyebrow: string;
     name: string;
     intro: string;
-    internship: string;
+    opportunity: string;
     cta_cv: string;
     cta_projects: string;
     cta_contact?: string;
     cta_linkedin: string;
     cta_github: string;
-  };
-  madrid: {
-    title: string;
-    items: Array<{
-      label: string;
-      value: string;
-    }>;
   };
   about: {
     title: string;
@@ -64,18 +56,9 @@ export interface TranslationSet {
     tech_label: string;
     close: string;
   };
-  forMadrid: {
-    title: string;
-    text: string;
-  };
   experience: {
     title: string;
     eyebrow: string;
-  };
-  linkedinPost: {
-    title: string;
-    intro: string;
-    body: string;
   };
   contact: {
     title: string;

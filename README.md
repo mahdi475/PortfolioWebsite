@@ -1,6 +1,6 @@
 # Mahdi Mosavi — Portfolio Website
 
-Personal portfolio site for Mahdi Mosavi, a Computer Engineering student looking for Software, Web, and AI internship opportunities in Madrid.
+Personal portfolio site for Mahdi Mosavi, a Computer Engineering student open to opportunities across software, web, AI, systems, and more.
 
 🔗 **Live site:** [mahdiportfolio.com](https://mahdiportfolio.com)
 📄 **CV:** [mahdiportfolio.com/cv](https://mahdiportfolio.com/cv)

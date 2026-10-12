@@ -2,6 +2,60 @@
   color-scheme: light;
 }
 
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/inter-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0308, U+1E00-1E9F, U+1EF2-1EFF;
+}
+
+@font-face {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url("/fonts/sora-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url("/fonts/sora-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0308, U+1E00-1E9F, U+1EF2-1EFF;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/jetbrains-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/jetbrains-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0308, U+1E00-1E9F, U+1EF2-1EFF;
+}
+
 html {
   scroll-behavior: smooth;
   background: #f8fafc;
@@ -20,6 +74,14 @@ body {
     linear-gradient(180deg, #f8fbff 0%, #eef4ff 45%, #ffffff 100%);
   color: #0f172a;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: Sora, Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-mono-tech {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 html.dark body {
@@ -172,6 +234,37 @@ html.dark .shader-card::before {
   opacity: 0.55;
   transform: translateX(-120%);
   animation: shader-sheen 8s ease-in-out infinite;
+}
+
+.logo-chip {
+  transform: translateY(0);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.logo-chip:hover {
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.14);
+  transform: translateY(-2px);
+}
+
+.video-shell video {
+  background: #020617;
+}
+
+.video-shell::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.04)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 4px);
+  mix-blend-mode: screen;
+  opacity: 0.35;
 }
 
 @keyframes shader-drift {

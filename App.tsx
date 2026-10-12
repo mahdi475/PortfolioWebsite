@@ -4,11 +4,10 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import ResumeViewer from './components/ResumeViewer';
 import About from './components/About';
-import MadridInternship from './components/MadridInternship';
+import SocialProof from './components/SocialProof';
+import TechShowcase from './components/TechShowcase';
 import ProjectsGrid from './components/ProjectsGrid';
 import Experience from './components/Experience';
-import ForMadridCompanies from './components/ForMadridCompanies';
-import LinkedInPost from './components/LinkedInPost';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { Language, Theme } from './types';
@@ -62,12 +61,11 @@ const App: React.FC = () => {
           <Header />
           <main>
             <Hero />
-            <MadridInternship />
+            <SocialProof />
+            <TechShowcase />
             <ProjectsGrid />
             <Experience />
             <About />
-            <ForMadridCompanies />
-            <LinkedInPost />
             <Contact />
           </main>
           <Footer />

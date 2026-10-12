@@ -10,14 +10,13 @@ const Header: React.FC = () => {
   return (
     <nav className="glass-card sticky top-0 z-50 w-full px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#home" className="text-xl font-extrabold tracking-tight text-slate-950 dark:text-white">
+        <a href="#home" className="font-display text-xl font-extrabold tracking-tight text-slate-950 dark:text-white">
           Mahdi Mosavi
         </a>
         
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
           <a href="#home" className="text-sm font-semibold text-slate-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-300 transition-colors">{t.header.home}</a>
-          <a href="#madrid" className="text-sm font-semibold text-slate-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-300 transition-colors">{t.header.madrid}</a>
           <a href="#projects" className="text-sm font-semibold text-slate-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-300 transition-colors">{t.header.projects}</a>
           <a href="#experience" className="text-sm font-semibold text-slate-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-300 transition-colors">{t.header.experience}</a>
           <a href="#contact" className="text-sm font-semibold text-slate-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-300 transition-colors">{t.header.contact}</a>
@@ -75,13 +74,6 @@ const Header: React.FC = () => {
             className="w-11/12 text-center py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-900/80 font-semibold hover:bg-blue-50 dark:hover:bg-slate-800 transition-all"
           >
             {t.header.home}
-          </a>
-          <a
-            href="#madrid"
-            onClick={() => setIsMenuOpen(false)}
-            className="w-11/12 text-center py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-900/80 font-semibold hover:bg-blue-50 dark:hover:bg-slate-800 transition-all"
-          >
-            {t.header.madrid}
           </a>
           <a
             href="#projects"

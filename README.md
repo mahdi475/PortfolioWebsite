@@ -3,7 +3,7 @@
 Personal portfolio site for Mahdi Mosavi, a Computer Engineering student open to opportunities across software, web, AI, systems, and more.
 
 🔗 **Live site:** [mahdiportfolio.com](https://mahdiportfolio.com)
-📄 **CV:** [mahdiportfolio.com/cv](https://mahdiportfolio.com/cv)
+📄 **CV:** [mahdiportfolio.com/resume](https://mahdiportfolio.com/resume)
 
 ## Tech Stack
 
@@ -43,7 +43,7 @@ The production build outputs to `dist/`, which Vercel serves automatically on ev
 
 ## Deployment
 
-Pushes to `main` are automatically built and deployed by Vercel. The `/cv` route redirects to `public/cv.pdf` (configured in `vercel.json`) so the CV can always be shared as a clean link: `mahdiportfolio.com/cv`.
+Pushes to `main` are automatically built and deployed by Vercel. The `/resume` route opens an on-site CV viewer (`components/ResumeViewer.tsx`) that shows `public/resume.pdf`, so the CV can always be shared as a clean link: `mahdiportfolio.com/resume`.
 
 ## Contact
 

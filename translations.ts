@@ -3,7 +3,9 @@ import { Language, TranslationSet } from './types';
 // Short labels. The longer texts are written in each component, in both languages.
 export const translations: Record<Language, TranslationSet> = {
   en: {
-    switchLanguage: 'På svenska',
+    switchLanguage: 'Byt till svenska',
+    toggleTheme: 'Switch light/dark mode',
+    toggleMenu: 'Open menu',
     projects: 'Projects',
     experience: 'Experience',
     about: 'About me',
@@ -13,7 +15,9 @@ export const translations: Record<Language, TranslationSet> = {
     updated: 'Updated October 2026.',
   },
   sv: {
-    switchLanguage: 'In English',
+    switchLanguage: 'Switch to English',
+    toggleTheme: 'Byt mellan ljust och mörkt läge',
+    toggleMenu: 'Öppna menyn',
     projects: 'Projekt',
     experience: 'Erfarenhet',
     about: 'Om mig',

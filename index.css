@@ -1,110 +1,43 @@
-/* Plain on purpose: browser default colors and links, one readable column. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  color-scheme: light dark;
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.55;
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/inter-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0308, U+1E00-1E9F, U+1EF2-1EFF;
 }
 
-.page {
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 1rem 1.25rem 3rem;
+@font-face {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url("/fonts/sora-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
 }
 
-h1 {
-  font-size: 2rem;
-  line-height: 1.2;
-  margin: 1.5rem 0 1rem;
+@font-face {
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url("/fonts/sora-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0308, U+1E00-1E9F, U+1EF2-1EFF;
 }
 
-h2 {
-  font-size: 1.4rem;
-  margin: 3rem 0 0.5rem;
-}
-
-h3 {
-  font-size: 1.1rem;
-  margin: 2rem 0 0.5rem;
-}
-
-h3 .year {
-  font-weight: normal;
-}
-
-p {
-  margin: 0 0 0.9rem;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.language {
-  text-align: right;
-  margin: 0;
-}
-
-.photo {
-  float: right;
-  width: 140px;
-  margin: 0.25rem 0 1rem 1.25rem;
-}
-
-.screenshot {
-  display: block;
-  margin: 0.75rem 0 1rem;
-  border: 1px solid #8888;
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-}
-
-footer {
-  margin-top: 3rem;
-  font-size: 0.9rem;
-}
-
-/* CV page */
-
-.resume {
-  padding: 0.75rem 1rem 1rem;
-}
-
-.resume p {
-  margin-bottom: 0.75rem;
-}
-
-.resume a + a {
-  margin-left: 1.25rem;
-}
-
-.resume canvas {
-  display: block;
-  margin: 0 auto;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: calc(100vh - 4.5rem);
-  border: 1px solid #8888;
-  background: #fff;
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 16px;
-  }
-
-  .photo {
-    width: 104px;
-    margin-left: 1rem;
-  }
+html {
+  scroll-behavior: smooth;
 }

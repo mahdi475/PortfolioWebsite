@@ -34,13 +34,13 @@ const projects: Project[] = [
       en: (
         <>
           <p>
-            A marketplace for chocolate that I built together with Firat Kaya. Buyers can browse and filter the
-            catalog. Sellers apply to get verified and then manage their own products. An admin approves new sellers
-            and keeps track of orders.
+            A marketplace for chocolate that I built together with Firat Kaya. Buyers can browse and filter the catalog.
+            Sellers apply to get verified and then manage their own products. An admin approves new sellers and keeps
+            track of orders.
           </p>
           <p>
-            The frontend is React and TypeScript. Supabase handles login, the PostgreSQL database and file uploads,
-            and the main user flows are tested with Playwright.
+            The frontend is React and TypeScript. Supabase handles login, the PostgreSQL database and file uploads, and
+            the main user flows are tested with Playwright.
           </p>
           <p>
             <ExternalLink href="https://chocolata-mvp-ksrb.vercel.app/catalog">Try the live catalog</ExternalLink> or{' '}
@@ -106,9 +106,9 @@ const projects: Project[] = [
       en: (
         <>
           <p>
-            A project in the course AI and Machine Learning (TAM400) at University West, done together with Firat
-            Kaya. We used the UCI Auto MPG dataset to predict how many miles per gallon a car gets from things like
-            weight, horsepower and model year.
+            A project in the course AI and Machine Learning (TAM400) at University West, done together with Firat Kaya.
+            We used the UCI Auto MPG dataset to predict how many miles per gallon a car gets from things like weight,
+            horsepower and model year.
           </p>
           <p>
             We cleaned the data, compared four models and ended up with a random forest. On the test set it got an MAE
@@ -131,8 +131,8 @@ const projects: Project[] = [
             vikt, hästkrafter och årsmodell.
           </p>
           <p>
-            Vi rensade datan, jämförde fyra modeller och landade i en random forest. På testdatan fick den MAE 1,58, RMSE
-            2,16 och R² 0,91. Vi använde Python, pandas, scikit-learn och Jupyter.
+            Vi rensade datan, jämförde fyra modeller och landade i en random forest. På testdatan fick den MAE 1,58,
+            RMSE 2,16 och R² 0,91. Vi använde Python, pandas, scikit-learn och Jupyter.
           </p>
           <p>
             <ExternalLink href="https://github.com/mahdi475/Mahdi-Firat-vehical-efficiency-ai-model">
@@ -214,26 +214,34 @@ const Projects: React.FC = () => {
   const { lang, t } = useContext(LanguageContext);
 
   return (
-    <section id="projects">
-      <h2>{t.projects}</h2>
-      {projects.map((project) => (
-        <article key={project.id}>
-          <h3>
-            {project.title[lang]} <span className="year">({project.year[lang]})</span>
-          </h3>
-          {project.image && (
-            <img
-              className="screenshot"
-              src={project.image.src}
-              width={project.image.width}
-              height={project.image.height}
-              alt={project.image.alt[lang]}
-              loading="lazy"
-            />
-          )}
-          {project.body[lang]}
-        </article>
-      ))}
+    <section id="projects" className="scroll-mt-20 px-6 py-12 md:py-16">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="font-display text-3xl font-extrabold tracking-tight">{t.projects}</h2>
+
+        <div className="mt-8 max-w-3xl space-y-14">
+          {projects.map((project) => (
+            <article key={project.id}>
+              {project.image && (
+                <img
+                  src={project.image.src}
+                  width={project.image.width}
+                  height={project.image.height}
+                  alt={project.image.alt[lang]}
+                  loading="lazy"
+                  className="mb-5 aspect-video w-full rounded-xl border border-slate-200 object-cover object-top dark:border-slate-800"
+                />
+              )}
+              <h3 className="text-xl font-bold">
+                {project.title[lang]}{' '}
+                <span className="font-normal text-slate-500 dark:text-slate-400">({project.year[lang]})</span>
+              </h3>
+              <div className="mt-3 space-y-3 leading-relaxed text-slate-700 dark:text-slate-300">
+                {project.body[lang]}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

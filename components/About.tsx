@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react';
 import { LanguageContext } from '../App';
 
@@ -6,20 +5,34 @@ const About: React.FC = () => {
   const { lang, t } = useContext(LanguageContext);
 
   return (
-    <section className="px-6 py-16 transition-colors duration-500">
-      <div className="mx-auto max-w-5xl">
-        <div className="glass-card rounded-2xl p-7 shadow-sm transition-colors duration-500 md:p-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700 dark:text-blue-300">
-            {lang === 'sv' ? 'Kort om mig' : 'Quick profile'}
+    <section id="about">
+      <h2>{t.about}</h2>
+
+      {lang === 'en' ? (
+        <>
+          <p>
+            My program at University West focuses on programming and network technology. Next to the courses I like
+            to build my own projects, like the ones above.
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950 transition-colors duration-500 dark:text-white">
-            {t.about.title}
-          </h2>
-          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-700 transition-colors duration-500 dark:text-slate-300">
-            {t.about.text}
+          <p>
+            I speak Swedish, English and Persian, Norwegian quite well and some Spanish. I have the Cisco CCNA1
+            certificate (Introduction to Networks).
           </p>
-        </div>
-      </div>
+          <p>Outside of tech I play football and chess and go to the gym.</p>
+        </>
+      ) : (
+        <>
+          <p>
+            Min utbildning på Högskolan Väst har inriktning mot programmering och nätverksteknik. Vid sidan av kurserna
+            bygger jag gärna egna projekt, som de ovan.
+          </p>
+          <p>
+            Jag pratar svenska, engelska och persiska, ganska bra norska och lite spanska. Jag har Cisco-certifikatet
+            CCNA1 (Introduction to Networks).
+          </p>
+          <p>Utanför tekniken spelar jag fotboll och schack och tränar på gym.</p>
+        </>
+      )}
     </section>
   );
 };

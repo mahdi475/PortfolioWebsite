@@ -1,82 +1,56 @@
 import React, { useContext } from 'react';
 import { LanguageContext } from '../App';
 
-const experience = {
-  title: {
-    en: 'Crew 4 You - IT & Web Coordinator',
-    sv: 'Crew 4 You - IT & Web Coordinator',
-  },
-  period: '2024-2025',
-  description: {
-    en:
-      'Helped with website planning, internal app planning, IT coordination, Google/business profiles and process improvement for a real service business.',
-    sv:
-      'Hjälpte med webbplatsplanering, intern app-planering, IT-koordinering, Google/business-profiler och processförbättring för ett riktigt tjänsteföretag.',
-  },
-  points: {
-    en: [
-      'Website planning and content structure',
-      'Internal app and workflow planning',
-      'IT coordination and Google/business profile support',
-      'Process improvement with non-technical stakeholders',
-    ],
-    sv: [
-      'Webbplatsplanering och innehållsstruktur',
-      'Planering av intern app och arbetsflöden',
-      'IT-koordinering och stöd med Google/business-profiler',
-      'Processförbättring tillsammans med icke-tekniska personer',
-    ],
-  },
-  tech: ['Web Planning', 'IT Coordination', 'Google Business', 'Process Improvement'],
-};
-
 const Experience: React.FC = () => {
   const { lang, t } = useContext(LanguageContext);
 
   return (
-    <section id="experience" className="scroll-mt-24 px-6 py-16 transition-colors duration-500">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700 dark:text-blue-300">
-            {t.experience.eyebrow}
+    <section id="experience">
+      <h2>{t.experience}</h2>
+
+      {lang === 'en' ? (
+        <>
+          <h3>
+            IT Application Manager, Crew 4 You Sweden AB <span className="year">(March–July 2026)</span>
+          </h3>
+          <p>
+            Crew 4 You is a staffing agency with more than 1,600 employees. I set up and managed Google Business
+            Profiles for their offices, took care of the company website and helped plan a new internal app together
+            with the team.
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950 dark:text-white">
-            {t.experience.title}
-          </h2>
-        </div>
 
-        <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950 md:p-8">
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <h3 className="text-2xl font-bold text-slate-950 dark:text-white">
-                {experience.title[lang]}
-              </h3>
-              <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-700 dark:text-slate-300">
-                {experience.description[lang]}
-              </p>
-            </div>
-            <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700 dark:bg-blue-950/50 dark:text-blue-200">
-              {experience.period}
-            </span>
-          </div>
+          <h3>
+            Freelance web developer <span className="year">(since March 2026)</span>
+          </h3>
+          <p>I build websites, landing pages and small AI-assisted prototypes for small businesses and other clients.</p>
 
-          <ul className="mt-6 grid gap-3 text-sm text-slate-700 dark:text-slate-300 md:grid-cols-2">
-            {experience.points[lang].map((point) => (
-              <li key={point} className="rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
-                {point}
-              </li>
-            ))}
-          </ul>
+          <p>
+            Next to my studies I have also worked part-time for five years, for example as an event technician, a youth
+            boxing coach and in elderly care.
+          </p>
+        </>
+      ) : (
+        <>
+          <h3>
+            IT Application Manager, Crew 4 You Sweden AB <span className="year">(mars–juli 2026)</span>
+          </h3>
+          <p>
+            Crew 4 You är ett bemanningsföretag med över 1 600 anställda. Jag satte upp och skötte Google
+            Business-profiler för deras kontor, tog hand om företagets webbplats och var med och planerade en ny intern
+            app tillsammans med teamet.
+          </p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
-            {experience.tech.map((tag) => (
-              <span key={tag} className="rounded-md bg-blue-50 px-2 py-1 text-xs font-bold text-blue-700 dark:bg-blue-950/50 dark:text-blue-300">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </article>
-      </div>
+          <h3>
+            Frilansande webbutvecklare <span className="year">(sedan mars 2026)</span>
+          </h3>
+          <p>Jag bygger webbplatser, landningssidor och små AI-stödda prototyper åt småföretag och andra kunder.</p>
+
+          <p>
+            Vid sidan av studierna har jag också jobbat extra i fem år, till exempel som eventtekniker, boxningstränare
+            för ungdomar och inom äldreomsorgen.
+          </p>
+        </>
+      )}
     </section>
   );
 };

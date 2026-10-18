@@ -1,51 +1,29 @@
-# Mahdi Mosavi — Portfolio Website
+# mahdiportfolio.com
 
-Personal portfolio site for Mahdi Mosavi, a Computer Engineering student open to opportunities across software, web, AI, systems, and more.
+The code for my personal website: https://mahdiportfolio.com
 
-🔗 **Live site:** [mahdiportfolio.com](https://mahdiportfolio.com)
-📄 **CV:** [mahdiportfolio.com/resume](https://mahdiportfolio.com/resume)
+It is a small React and TypeScript site, built with Vite and hosted on Vercel.
+The page is in English, and in Swedish at `/?lang=sv`.
 
-## Tech Stack
-
-- **[Vite](https://vitejs.dev/)** — build tool and dev server
-- **React** + **TypeScript**
-- **Vercel** — hosting and deployment
-- Multi-language support (see `translations.ts`)
-
-## Getting Started
-
-**Prerequisites:** Node.js
+## Run it locally
 
 ```bash
-# Install dependencies
 npm install
-
-# Run the dev server
 npm run dev
-
-# Build for production
-npm run build
 ```
 
-The production build outputs to `dist/`, which Vercel serves automatically on every push to `main`.
+`npm run build` puts the finished site in `dist/`. Vercel builds and publishes every push to `main`.
 
-## Project Structure
+## Where things are
 
-```
-├── components/       # UI components
-├── public/           # Static assets (images, cv.pdf, etc.)
-├── App.tsx           # Root component
-├── index.tsx         # Entry point
-├── translations.ts   # i18n strings
-├── types.ts          # Shared TypeScript types
-└── vercel.json        # Vercel build & redirect config
-```
-
-## Deployment
-
-Pushes to `main` are automatically built and deployed by Vercel. The `/resume` route opens an on-site CV viewer (`components/ResumeViewer.tsx`) that shows `public/resume.pdf`, so the CV can always be shared as a clean link: `mahdiportfolio.com/resume`.
+- `components/` has one file per part of the page (intro, projects, experience, about, contact).
+- `translations.ts` has the short labels in English and Swedish.
+- `site.ts` has my contact details.
+- `index.css` is all the styling.
+- `public/resume.pdf` is my CV. It is shown at https://mahdiportfolio.com/resume.
 
 ## Contact
 
-- LinkedIn: [linkedin.com/in/mahdi-mosavi](https://linkedin.com/in/mahdi-mosavi-802690229)
-- GitHub: [github.com/mahdi475](https://github.com/mahdi475)
+- Email: mahdi.mosavi.work@gmail.com
+- GitHub: https://github.com/mahdi475
+- LinkedIn: https://www.linkedin.com/in/mahdi-mosavi-802690229
